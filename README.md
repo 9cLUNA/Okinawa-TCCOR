@@ -12,6 +12,24 @@ The other two scripts are test scripts. One is used for local testting purposes 
 
 The variables.csv file contains all those possible outcomes that Tesseract is looking for. We don't know what the image contains so all possible variations are presented to tesseract. The var_absolute file contains only those that we want to output or pass. These are what the final outcome should look like.
 
+## Installed Packages
+
+Here is a list of the packages imported
+
+```
+from urllib.request import urlopen
+import requests
+from bs4 import BeautifulSoup
+import regex as re
+import pytesseract as pt
+from PIL import Image
+import io
+import os
+from os import listdir
+from os.path import isfile, join
+import shutil
+```
+
 ## Running the tests
 
 Currently, the LIVE script is throwing an error.
