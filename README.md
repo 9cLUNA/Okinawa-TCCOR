@@ -10,7 +10,7 @@ One is the live script that pulls from the active website. I do not control the 
 
 The other two scripts are test scripts. One is used for local testting purposes only, and the other is being used to pull the live website to create a method to actively search for the image or current TCCOR information if there is no image present.
 
-The variables.csv file contains all those possible outcomes that Tesseract is looking for.
+The variables.csv file contains all those possible outcomes that Tesseract is looking for. We don't know what the image contains so all possible variations are presented to tesseract. The var_absolute file contains only those that we want to output or pass. These are what the final outcome should look like.
 
 ## Running the tests
 
@@ -21,7 +21,7 @@ tccorurl = urllink + tccor.find('img')['src'] # create the complete url
 AttributeError: 'NoneType' object has no attribute 'find'
 ```
 
-This occurs because there is currently no image and because the webmasters have changed the ID name of the <DIV>. Work is being done right now to ensure that the script looks through each DIV in the content section of the website to find the current TCCOR status.
+This occurs because there is currently no image and because the webmasters have changed the ID name of the DIV. Work is being done right now to ensure that the script looks through each DIV in the content section of the website to find the current TCCOR status.
 
 ## Built With
 
