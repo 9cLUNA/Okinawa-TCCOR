@@ -1,0 +1,21 @@
+<div class="DnnModule DnnModule-DNN_HTML DnnModule-26874"><a name="26874"></a>
+<div class="BHeader">
+	<h2 class="Title"><span id="dnn_ctr26874_dnnTitle_titleLabel" class="tt">typhoon information</span>
+
+
+</h2>
+	<div id="dnn_ctr26874_ContentPane" class="containerpane"><!-- Start_Module_26874 --><div id="dnn_ctr26874_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr26874_HtmlModule_lblContent" class="Normal">
+	<p style="text-align: center;"><span style="font-size: 48px;">NO ACTIVE TCCOR</span></p>
+<p><span style="font-size: 16px;">The island of Okinawa generally&nbsp;experiences several severe storms similar to hurricanes, known locally&nbsp;as typhoons, each year. Damaging&nbsp;and destructive winds,&nbsp;heavy rain and dangerous sea conditions are common during these storms.</span></p>
+<p style="text-align: left;"><span style="font-size: 16px;">It is currently outside of the designated&nbsp;typhoon season, which ranges from&nbsp;01 June to 30 November. Typhoons may form at any time, but they&nbsp;have&nbsp;an elevated potential of occurring during these months.&nbsp;</span></p>
+<p><span style="font-size: 16px;">In preparation for the upcoming season, please review the Typhoon Readiness Guide for information on the different Tropical Cyclone Condition of Readiness (TCCOR) levels, actions, requirements, safety tips and more.</span></p>
+<p><span style="font-size: 16px;"></span></p>
+<p><span style="font-size: 16px;"></span></p>
+</div>
+
+</div><!-- End_Module_26874 --></div>
+</div>
+
+
+</div>
