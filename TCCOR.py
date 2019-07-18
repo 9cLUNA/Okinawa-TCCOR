@@ -16,8 +16,10 @@ current_file_dir = os.path.dirname(__file__)
 
 # get all possible tccor var, dirty
 tccor_vars_file = os.path.join(current_file_dir, "tccor_variables.csv")
+
 # get absolute values, cleanclear
 tccor_var_absolute = os.path.join(current_file_dir, "tccor_var_absolute.txt")
+
 # get absolute path for tmp img file
 tmp_img = os.path.join(current_file_dir, "tmp_img.jpg")
 
@@ -30,16 +32,21 @@ url = 'http://www.kadena.af.mil/Agencies/Local-Weather'
 # and report that instead
 
 soup = BeautifulSoup(urlopen(url).read(), "html.parser")
-tccor = soup.find("div", {"id": "dnn_ctr27398_HtmlModule_lblContent"})
+
+# Find the title text then find the img tag right after it
+tccor = soup.find(text="Current TCCOR Information").findNext('img')['src']
 
 urllink = 'https://www.kadena.af.mil' # first part of URL
-tccorurl = urllink + tccor.find('img')['src'] # create the complete url
+tccorurl = urllink + tccor # create the complete url
 
 tccorimg = requests.get(tccorurl, stream=True)
 with open(tmp_img, 'wb') as out_file:
     shutil.copyfileobj(tccorimg.raw, out_file)
 
-image = Image.open(tmp_img)
+image = Image.open(tmp_img).convert('RGB')
+# image might be gif and JPG doesn't support transparency
+#image = image.convert('RGB')
+
 # enlarge img for better accuracy
 basewidth = 4000
 wpercent = (basewidth/float(image.size[0]))
