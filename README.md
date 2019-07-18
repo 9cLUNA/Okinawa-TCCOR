@@ -34,7 +34,7 @@ urllib3==1.25.3
 wrapt==1.11.2
 ```
 
-## Running the tests
+## Running the script
 
 
 ```
