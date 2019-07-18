@@ -4,42 +4,42 @@ Using Python with the Tesseract OCR library wrapper to read current TCCOR inform
 
 ## Getting Started
 
-This project is done in Python 3 using Tesseract OCR. There is three main scripts.
+This project is done in Python 3 using Tesseract OCR. I have two scripts; the main script is TCCOR.py and the local testing script is test_TCCOR.py. I used the local testing script just to test and perfect my tesseract attributes without pulling live from the website I was scraping.
 
-One is the live script that pulls from the active website. I do not control the website so this script needs to be smart enough to adapt to changes that their website makes.
-
-The other two scripts are test scripts. One is used for local testting purposes only, and the other is being used to pull the live website to create a method to actively search for the image or current TCCOR information if there is no image present.
-
-The variables.csv file contains all those possible outcomes that Tesseract is looking for. We don't know what the image contains so all possible variations are presented to tesseract. The var_absolute file contains only those that we want to output or pass. These are what the final outcome should look like.
+The script locates the TCCOR image, downloads it and adjust it to best allow tesseract to locate the target text. The variables.csv file is all possible combinations that tesseract might find in the image. The absolute variable file contains what those outcomes should translate to.
 
 ## Installed Packages
 
 Here is a list of the packages imported
 
 ```
-from urllib.request import urlopen
-import requests
-from bs4 import BeautifulSoup
-import regex as re
-import pytesseract as pt
-from PIL import Image
-import io
-import os
-from os import listdir
-from os.path import isfile, join
-import shutil
+astroid==2.2.5
+beautifulsoup4==4.7.1
+bs4==0.0.1
+certifi==2019.6.16
+chardet==3.0.4
+idna==2.8
+isort==4.3.21
+lazy-object-proxy==1.4.1
+mccabe==0.6.1
+Pillow==6.1.0
+pylint==2.3.1
+pytesseract==0.2.7
+regex==2019.6.8
+requests==2.22.0
+six==1.12.0
+soupsieve==1.9.2
+typed-ast==1.4.0
+urllib3==1.25.3
+wrapt==1.11.2
 ```
 
 ## Running the tests
 
-Currently, the LIVE script is throwing an error.
 
 ```
-tccorurl = urllink + tccor.find('img')['src'] # create the complete url
-AttributeError: 'NoneType' object has no attribute 'find'
+python3 tccor.py
 ```
-
-This occurs because there is currently no image and because the webmasters have changed the ID name of the DIV. Work is being done right now to ensure that the script looks through each DIV in the content section of the website to find the current TCCOR status.
 
 ## Built With
 
