@@ -14,30 +14,33 @@ import shutil
 current_file_path = __file__
 current_file_dir = os.path.dirname(__file__)
 
-# get all possible tccor var, dirty
+# get all possible tccor variables
+# used to help tesseract find specific text we are looking for
 tccor_vars_file = os.path.join(current_file_dir, "tccor_variables.csv")
 
-# get absolute values, cleanclear
+# get absolute values of which will be our results
+# that tesseract matches to
 tccor_var_absolute = os.path.join(current_file_dir, "tccor_var_absolute.txt")
 
-# get absolute path for tmp img file
+# get absolute path for temporary image file
+# jpg because tesseract likes jpg and jpegs
 tmp_img = os.path.join(current_file_dir, "tmp_img.jpg")
 
+# set target url
 url = 'http://www.kadena.af.mil/Agencies/Local-Weather'
 
-# Need to find way to actively find this div even if number changes...
-# perhaps use title bar "TYPHOON INFORMATION" instead
-# and pull all info under it, if there is no image found, then search text
-# for NO ACTIVE TCCOR
-# and report that instead
-
+# begin soup to read the webpage and parse as html
 soup = BeautifulSoup(urlopen(url).read(), "html.parser")
 
-# Find the title text then find the img tag right after it
+# looking for a section titled accordingly
+# then looking for the image directly after it 
 tccor = soup.find(text="Current TCCOR Information").findNext('img')['src']
 
-urllink = 'https://www.kadena.af.mil' # first part of URL
-tccorurl = urllink + tccor # create the complete url
+# creating url link to the image file we found
+# first we get the url parent
+# then combine url with the img src to get complete url
+urllink = 'https://www.kadena.af.mil'
+tccorurl = urllink + tccor
 
 tccorimg = requests.get(tccorurl, stream=True)
 with open(tmp_img, 'wb') as out_file:
