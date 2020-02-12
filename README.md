@@ -22,7 +22,7 @@ idna==2.8
 isort==4.3.21
 lazy-object-proxy==1.4.1
 mccabe==0.6.1
-Pillow==6.1.0
+Pillow==7.0.0
 pylint==2.3.1
 pytesseract==0.2.7
 regex==2019.6.8
@@ -46,7 +46,7 @@ python3 tccor.py
 Software
 
 * [Python 3](https://www.python.org/) - High-level, general purpose programming language.
-* [Tesseract](https://github.com/tesseract-ocr/tesseract) - OCR engine.
+* [Tesseract](https://github.com/tesseract-ocr/tesseract) - Optical Character Recognition engine; sponsored by Google.
 * [pytesseract](https://pypi.org/project/pytesseract/) - Python's wrapper for Google's Tesseract-OCR engine.
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) - Python package for parsing HTML and XML websites. Useful to extract data and other web scraping needs.
 
