@@ -27,7 +27,7 @@ tccor_var_absolute = os.path.join(current_file_dir, "tccor_var_absolute.txt")
 tmp_img = os.path.join(current_file_dir, "tmp_img.jpg")
 
 # set target url
-url = 'http://www.kadena.af.mil/Agencies/Local-Weather'
+url = 'https://www.kadena.af.mil/Agencies/Local-Weather'
 
 # begin soup to read the webpage and parse as html
 soup = BeautifulSoup(urlopen(url).read(), "html.parser")
@@ -36,13 +36,18 @@ try:
 
     # looking for a section titled accordingly
     # then looking for the image directly after it 
-    tccor = soup.find(text="Current TCCOR Information").findNext('img')['src']
+    
+    # 6/21/2020 - tccor = soup.find(text="Current TCCOR Information").findNext('img')['src']
+    # 6/21/2020 - Webmaster changed text to all caps. Can I account for this in python? Of course!
+    tccor = soup.find(text="CURRENT TCCOR INFORMATION").findNext('img')['src']
 
     # creating url link to the image file we found
     # first we get the url parent
     # then combine url with the img src to get complete url
     urllink = 'https://www.kadena.af.mil'
     tccorurl = urllink + tccor
+
+
 
     tccorimg = requests.get(tccorurl, stream=True)
     with open(tmp_img, 'wb') as out_file:
