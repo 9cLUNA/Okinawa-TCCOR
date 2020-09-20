@@ -7,7 +7,7 @@ idna==2.8
 isort==4.3.21
 lazy-object-proxy==1.4.1
 mccabe==0.6.1
-Pillow==7.0.0
+Pillow==7.2.0
 pylint==2.3.1
 pytesseract==0.2.7
 regex==2019.6.8
