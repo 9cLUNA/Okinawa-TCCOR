@@ -13,25 +13,27 @@ The script locates the TCCOR image, downloads it and adjust it to best allow tes
 Here is a list of the packages imported
 
 ```
-astroid==2.2.5
-beautifulsoup4==4.7.1
+astroid==2.4.2
+beautifulsoup4==4.9.1
 bs4==0.0.1
-certifi==2019.6.16
+certifi==2020.6.20
 chardet==3.0.4
-idna==2.8
-isort==4.3.21
-lazy-object-proxy==1.4.1
+idna==2.10
+isort==5.5.2
+lazy-object-proxy==1.4.3
 mccabe==0.6.1
-Pillow==7.0.0
-pylint==2.3.1
-pytesseract==0.2.7
-regex==2019.6.8
+Pillow==7.2.0
+pylint==2.6.0
+pytesseract==0.3.6
+regex==2020.7.14
 requests==2.22.0
-six==1.12.0
+six==1.15.0
 soupsieve==1.9.2
-typed-ast==1.4.0
-urllib3==1.25.3
-wrapt==1.11.2
+tesserocr==2.5.1
+toml==0.10.1
+typed-ast==1.4.1
+urllib3==1.25.10
+wrapt==1.12.1
 ```
 
 ## Running the script
